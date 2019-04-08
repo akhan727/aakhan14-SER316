@@ -22,7 +22,7 @@ public class GivenWhiteBox {
         // One Student
         oneStudent = new Course("SER316");
         oneStudent.set_points("Hanna", 50);
-        double ans = oneStudent.calculateAverageWithoutMinWithoutMax();
+        double ans = oneStudent.calcAverageNoMinMax();
         assertTrue(ans == 50.0);
     }
 }

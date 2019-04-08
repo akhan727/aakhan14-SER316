@@ -1,8 +1,18 @@
 package main.java;
 
+/*
+ * File: Course.java
+ * Author: Aaron Khan
+ * Date: 4/2/19
+ * 
+ * Description: A class for managing course statistics
+ * */
+
 /**
- * class for managing course statistics
- */
+ * Class: Course
+ * 
+ * Description: A class for managing course statistics
+ * */
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,42 +20,57 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 
-
-
 public class Course {
-    
-    public HashMap<String, Integer> points = new HashMap<>(); // maps student names (asurite) to their points
-    private String Name; // course name
+	
+	// maps student names (asurite) to their points
+    public HashMap<String, Integer> points = new HashMap<>(); 
+    private String _Name; // course name
 
-
+    /**
+     * Method: Course [Constructor]
+     * Inputs: name <String>
+     * Returns: name of entered course
+     * 
+     * Description: (Constructor) set the name of the course entered by user
+     * */
     public Course(String name){
-        this.SetName(name);
+        this.setName(name);
     }
 
-    public String GetName() {
-        return Name;
+    public String getName() {
+        return _Name;
     }
 
-    public void SetName(String name) {
-        this.Name = name;
+    public void setName(String name) {
+        this._Name = name;
     }
     
-
+    /**
+     * Method: printCourseStats
+     * Inputs: n/a
+     * Returns: String
+     * 
+     * Description: Prints out course stats.
+     * */
     public void printCourseStats() {
        ArrayList<Integer> values = new ArrayList<Integer>(points.values());
 
         System.out.print("Average Grades without max and without min: ");
-        System.out.println(this.calculateAverageWithoutMinWithoutMax());
+        System.out.println(this.calcAverageNoMinMax());
     }
     
-    
-    // REACH at least 95% Code coverage (assign 3)
-    // method to draw node graph for
-    // should throw null pointer for empty points member
-    // negative points should be ignored
-    // max value and min value should be removed - (if doubles then only the first occurrence)
-    // if just one or two values no values will be omitted
-    public double calculateAverageWithoutMinWithoutMax() throws NullPointerException {
+    /**
+     * Method: calcAverageNoMinMax
+     * Inputs: n/a
+     * Returns: 
+     * 
+     * Description: REACH at least 95% Code coverage (assign 3). Method to draw
+     * node graph for. Should throw null pointer for empty points member.
+     * Negative points should be ignored. Max value and min value should be
+     * removed - (if doubles then only the first occurence). If just one or two
+     * values, no values will be omitted.
+     * */
+    public double calcAverageNoMinMax() throws NullPointerException {
         ArrayList<Integer> collection = new ArrayList<Integer>(points.values());
         
          int counter = 0;
@@ -75,21 +100,27 @@ public class Course {
             
             int totalPoints = allPoints-max-min;
                 return totalPoints/(double)(counter-1); 
-
         }
     }
     
     // REACH at least 95% Code coverage  (assign 3)
-    // if student with the name (asurite member) is not yet included student needs to be added to student list 
-    // sets points for a student 
+    // if student with the name (asurite member) is not yet included student 
+    // needs to be added to student list 
+    // sets points for a student
     public void set_points(String name, int points) {
     	System.out.println(points);
         this.points.put(name, points);
     }
     
-    
-    // REACH at least 95% Code coverage  (assign 3)
-    // Students should only be added when they are not yet in the course (names (asurite member) needs to be unique)
+    /**
+     * Method: addStudent
+     * Inputs: student <Student>
+     * Returns: boolean
+     * 
+     * Description: REACH at least 95% Code coverage (assign 3). Students should
+     * only be added when they are not yet in the course (names (asurite member)
+     * needs to be unique)
+     * */
     ArrayList<Student> students  = new ArrayList<Student>();
     public boolean addStudent(Student s) {
         students.add(s);
@@ -97,12 +128,10 @@ public class Course {
         return true;
     }
 
-
-    public HashMap<String, Integer> GetPoints(){
+    public HashMap<String, Integer> getPoints(){
         return points;
     }
     
-
     public int getStudent_Points(String student) {
         return points.get(student);
     }
@@ -110,17 +139,22 @@ public class Course {
     public int getStudent_Points(Student student) {
         return points.get(student.getAsurite());
     }
-
-    
+  
     public ArrayList<Student> getStudents(){
         return students;
     }
     
+    /**
+     * Method: countOccurencesLetterGrades
+     * Inputs: n/a
+     * Returns: null
+     * 
+     * Description: Calculate how often each letter grade occurs. Calculation
+     * is based on the points member inherited from Course. Percentage is
+     * calculated by dividing the points by max value in points list. Negative
+     * points are discarded.
+     * */
     public HashMap<String, Integer> countOccurencesLetterGrades() throws NullPointerException{
      	return null;
-   
     }
-  
- 
-  
  }
