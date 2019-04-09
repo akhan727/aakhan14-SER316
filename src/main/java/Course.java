@@ -62,32 +62,33 @@ public class Course {
     /**
      * Method: calcAverageNoMinMax
      * Inputs: n/a
-     * Returns: 
+     * Returns: average
      * 
      * Description: REACH at least 95% Code coverage (assign 3). Method to draw
      * node graph for. Should throw null pointer for empty points member.
      * Negative points should be ignored. Max value and min value should be
-     * removed - (if doubles then only the first occurence). If just one or two
+     * removed - (if doubles then only the first occurrence). If just one or two
      * values, no values will be omitted.
      * */
-    public double calcAverageNoMinMax() throws NullPointerException {
-        ArrayList<Integer> collection = new ArrayList<Integer>(points.values());
+	public double calcAverageNoMinMax() throws NullPointerException {
+		ArrayList<Integer> collection = new ArrayList<Integer>(points.values());
+		
+		int counter = 0;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
         
-         int counter = 0;
-         int min = Integer.MAX_VALUE;
-         int max = Integer.MIN_VALUE;
-         if(collection.size() == 1)
+        if(collection.size() == 1)
             return collection.get(0);
         
         else if(collection.size() == 2 ){
             return (double)(collection.get(0) + collection.get(1))/2;
         }
-        else {
-            int allPoints = 0;
+        else {       	
+        	int allPoints = 0;
             for(int point: collection){
                 if (point >= 0) {
                     
-                    counter = counter++;
+                    counter = counter+1;                
                     if (point < min){
                         min = point;
                     }
@@ -98,15 +99,21 @@ public class Course {
                 }
             }
             
-            int totalPoints = allPoints-max-min;
-                return totalPoints/(double)(counter-1); 
+            if(counter > 2) {
+                int totalPoints = allPoints-max-min;                
+                return totalPoints/(double)(counter-2); 
+            }
+            else {
+            	int totalPoints = allPoints;
+                return totalPoints/(double)(counter); 
+            }           
         }
     }
     
     // REACH at least 95% Code coverage  (assign 3)
-    // if student with the name (asurite member) is not yet included student 
-    // needs to be added to student list 
-    // sets points for a student
+    // If student with the name (asurite member) is not yet included, student 
+    // needs to be added to student list.
+    // Sets points for a student
     public void set_points(String name, int points) {
     	System.out.println(points);
         this.points.put(name, points);
