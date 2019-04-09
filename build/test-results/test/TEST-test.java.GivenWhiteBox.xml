@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.GivenWhiteBox" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-03-27T01:42:37" hostname="Aarons-iMac.local" time="0.001">
+<testsuite name="test.java.GivenWhiteBox" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-09T01:16:32" hostname="Aarons-iMac.local" time="0.007">
   <properties/>
-  <testcase name="testAverageWithoutMinWithoutMax" classname="test.java.GivenWhiteBox" time="0.001"/>
+  <testcase name="testAverageWithoutMinWithoutMax" classname="test.java.GivenWhiteBox" time="0.007"/>
   <system-out><![CDATA[50
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
