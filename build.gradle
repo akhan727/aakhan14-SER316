@@ -2,12 +2,11 @@
 //   id "com.github.spotbugs" version "1.6.11"
 // }
 
+apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
 
-
 mainClassName = 'main.java.Main'
-
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -19,6 +18,14 @@ dependencies {
 
     compile "junit:junit:4.12" 
     compile files('cls/')
+}
+
+test {
+	filter {
+		//specific test class
+		includeTestsMatching "GivenWhiteBox"
+		includeTestsMatching "CourseTest"
+	} 
 }
 
 ///////////////////////////////////////////////////////////////////////////
