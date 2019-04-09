@@ -31,7 +31,9 @@ test {
 ///////////////////////////////////////////////////////////////////////////
 // Configure Checkstyle
 ///////////////////////////////////////////////////////////////////////////
+
 apply plugin: 'checkstyle'
+
 checkstyle {
 	// Keep checkstyle a little quieter
 	ignoreFailures = true
@@ -44,6 +46,7 @@ tasks.withType(Checkstyle) {
 		xml.enabled = false
 	}
 }
+
 checkstyle {
 	toolVersion = "8.8"
 }
@@ -53,7 +56,7 @@ checkstyle {
 ///////////////////////////////////////////////////////////////////////////
 
 spotbugs {
-	toolVersion = '3.1.12'
+    toolVersion = '3.1.12'
 }
 
 // To generate an HTML report instead of XML
