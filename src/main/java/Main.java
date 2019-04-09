@@ -51,16 +51,6 @@ public class Main {
         courses.get("SER315").set_points("rose", 23);
           
         courses.get("SER315").printCourseStats();     
-        
-
-        Course threeStudents;
-		threeStudents = new Course("SER333");
-		threeStudents.set_points("Ben", -20);
-		threeStudents.set_points("Ken", -30);
-		threeStudents.set_points("Len", 40);
-		threeStudents.set_points("Bun", 50);
-        double ans = threeStudents.calcAverageNoMinMax();
-        System.out.println("Three Students: " + ans);
-
+       
     }
 }
