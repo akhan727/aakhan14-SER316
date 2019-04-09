@@ -49,7 +49,7 @@ public class Main {
         //Integer marksRose;
         // SER316 TASK 2 SPOT-BUGS FIX
         System.out.println("Anna has scored " + Integer.toString(40)
-        + " marks which makes her the topper.");
+            + " marks which makes her the topper.");
 
         courses.get("SER315").set_points("anna", 40);
         courses.get("SER315").set_points("harry", 20);

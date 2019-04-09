@@ -49,8 +49,8 @@ public class Student {
     }
 
     /**
-     * Method: registerForCourse
-     * Inputs: course <Course>
+     * Method: registerForCourse.
+     * Inputs: course (Course)
      * Returns: Course
      * Description: Creates a course
      * */
